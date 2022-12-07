@@ -14,6 +14,7 @@
 		31A2710E2940B38C002370B2 /* ChumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A2710D2940B38C002370B2 /* ChumTests.swift */; };
 		31A271182940B38C002370B2 /* ChumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A271172940B38C002370B2 /* ChumUITests.swift */; };
 		31A2711A2940B38C002370B2 /* ChumUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A271192940B38C002370B2 /* ChumUITestsLaunchTests.swift */; };
+		E938C5B32940B5AF0088AC56 /* amal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938C5B22940B5AF0088AC56 /* amal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		31A271132940B38C002370B2 /* ChumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A271172940B38C002370B2 /* ChumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChumUITests.swift; sourceTree = "<group>"; };
 		31A271192940B38C002370B2 /* ChumUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChumUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E938C5B22940B5AF0088AC56 /* amal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				31A270FB2940B38B002370B2 /* ChumApp.swift */,
 				31A270FD2940B38B002370B2 /* ContentView.swift */,
+				E938C5B22940B5AF0088AC56 /* amal.swift */,
 				31A270FF2940B38C002370B2 /* Assets.xcassets */,
 				31A271012940B38C002370B2 /* Chum.entitlements */,
 				31A271022940B38C002370B2 /* Preview Content */,
@@ -261,6 +264,7 @@
 			files = (
 				31A270FE2940B38B002370B2 /* ContentView.swift in Sources */,
 				31A270FC2940B38B002370B2 /* ChumApp.swift in Sources */,
+				E938C5B32940B5AF0088AC56 /* amal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
