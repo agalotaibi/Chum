@@ -67,11 +67,11 @@ struct Profile: View {
         ZStack {
             
             VStack (spacing: 15){
-                Image("user").resizable()
+                Image("Lhome").resizable()
                     .frame(width: 150 ,height: 150).cornerRadius(80) /// make the background rounded
                     .overlay( /// apply a rounded border
                         RoundedRectangle(cornerRadius: 80)
-                            .stroke(Color(hex: 0xFF9C34), lineWidth: 4)
+                            .stroke(Color(hex: 0xFF9C34), lineWidth: 8)
                     )
                 
               
