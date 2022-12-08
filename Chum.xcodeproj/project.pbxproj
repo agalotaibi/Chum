@@ -14,6 +14,10 @@
 		31A2710E2940B38C002370B2 /* ChumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A2710D2940B38C002370B2 /* ChumTests.swift */; };
 		31A271182940B38C002370B2 /* ChumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A271172940B38C002370B2 /* ChumUITests.swift */; };
 		31A2711A2940B38C002370B2 /* ChumUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A271192940B38C002370B2 /* ChumUITestsLaunchTests.swift */; };
+		31A271272940CC3A002370B2 /* Discover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A271262940CC3A002370B2 /* Discover.swift */; };
+		31A271292940CC68002370B2 /* CreateEv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A271282940CC68002370B2 /* CreateEv.swift */; };
+		31A2712B2940D130002370B2 /* Onbording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A2712A2940D130002370B2 /* Onbording.swift */; };
+		31A2712D2940D152002370B2 /* TabeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A2712C2940D152002370B2 /* TabeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,10 @@
 		31A271132940B38C002370B2 /* ChumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A271172940B38C002370B2 /* ChumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChumUITests.swift; sourceTree = "<group>"; };
 		31A271192940B38C002370B2 /* ChumUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChumUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		31A271262940CC3A002370B2 /* Discover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discover.swift; sourceTree = "<group>"; };
+		31A271282940CC68002370B2 /* CreateEv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEv.swift; sourceTree = "<group>"; };
+		31A2712A2940D130002370B2 /* Onbording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onbording.swift; sourceTree = "<group>"; };
+		31A2712C2940D152002370B2 /* TabeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +104,11 @@
 			isa = PBXGroup;
 			children = (
 				31A270FB2940B38B002370B2 /* ChumApp.swift */,
+				31A2712A2940D130002370B2 /* Onbording.swift */,
+				31A2712C2940D152002370B2 /* TabeView.swift */,
 				31A270FD2940B38B002370B2 /* ContentView.swift */,
+				31A271262940CC3A002370B2 /* Discover.swift */,
+				31A271282940CC68002370B2 /* CreateEv.swift */,
 				31A270FF2940B38C002370B2 /* Assets.xcassets */,
 				31A271012940B38C002370B2 /* Chum.entitlements */,
 				31A271022940B38C002370B2 /* Preview Content */,
@@ -259,8 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31A2712D2940D152002370B2 /* TabeView.swift in Sources */,
+				31A271292940CC68002370B2 /* CreateEv.swift in Sources */,
 				31A270FE2940B38B002370B2 /* ContentView.swift in Sources */,
 				31A270FC2940B38B002370B2 /* ChumApp.swift in Sources */,
+				31A271272940CC3A002370B2 /* Discover.swift in Sources */,
+				31A2712B2940D130002370B2 /* Onbording.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
