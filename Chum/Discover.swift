@@ -19,7 +19,7 @@ struct Discover: View {
                     NavigationLink{
                         CreateEv()
                     }label: {
-                        Image(systemName: "plus.app.fill")
+                        Image(systemName: "plus")
                             .imageScale(.large)
                     }
                     

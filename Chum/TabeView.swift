@@ -11,7 +11,10 @@ struct TabeView: View {
     var body: some View {
         TabView(selection: .constant(1)) {
             NavigationView{
-                Discover() .navigationBarHidden(true)
+                Discover()
+                    
+                    .navigationBarTitleDisplayMode(.inline)
+                // .navigationBarHidden(true)
             }
             .tabItem { Text("Discover")
                 
@@ -21,10 +24,13 @@ struct TabeView: View {
             //feedbage
             NavigationView{
                 CreateEv()
+                    
+                    .navigationBarTitleDisplayMode(.inline)
+                // .navigationBarHidden(true)
             }
-            .tabItem { Text("create")
-                
-                Image(systemName: "person.3")
+            .tabItem { Text("Profile")
+                Image(systemName: "person.circle.fill")
+               
             }
             .tag(2)
             
