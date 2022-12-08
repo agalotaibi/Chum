@@ -18,6 +18,7 @@
 		31A271292940CC68002370B2 /* CreateEv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A271282940CC68002370B2 /* CreateEv.swift */; };
 		31A2712B2940D130002370B2 /* Onbording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A2712A2940D130002370B2 /* Onbording.swift */; };
 		31A2712D2940D152002370B2 /* TabeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A2712C2940D152002370B2 /* TabeView.swift */; };
+		E9BC4A682942239500CE809E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BC4A672942239500CE809E /* Profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		31A271282940CC68002370B2 /* CreateEv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEv.swift; sourceTree = "<group>"; };
 		31A2712A2940D130002370B2 /* Onbording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onbording.swift; sourceTree = "<group>"; };
 		31A2712C2940D152002370B2 /* TabeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabeView.swift; sourceTree = "<group>"; };
+		E9BC4A672942239500CE809E /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				31A2712A2940D130002370B2 /* Onbording.swift */,
 				31A2712C2940D152002370B2 /* TabeView.swift */,
 				31A270FD2940B38B002370B2 /* ContentView.swift */,
+				E9BC4A672942239500CE809E /* Profile.swift */,
 				31A271262940CC3A002370B2 /* Discover.swift */,
 				31A271282940CC68002370B2 /* CreateEv.swift */,
 				31A270FF2940B38C002370B2 /* Assets.xcassets */,
@@ -274,6 +277,7 @@
 				31A2712D2940D152002370B2 /* TabeView.swift in Sources */,
 				31A271292940CC68002370B2 /* CreateEv.swift in Sources */,
 				31A270FE2940B38B002370B2 /* ContentView.swift in Sources */,
+				E9BC4A682942239500CE809E /* Profile.swift in Sources */,
 				31A270FC2940B38B002370B2 /* ChumApp.swift in Sources */,
 				31A271272940CC3A002370B2 /* Discover.swift in Sources */,
 				31A2712B2940D130002370B2 /* Onbording.swift in Sources */,
