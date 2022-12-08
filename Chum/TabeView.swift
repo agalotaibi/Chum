@@ -9,31 +9,34 @@ import SwiftUI
 
 struct TabeView: View {
     var body: some View {
-        TabView(selection: .constant(1)) {
-            NavigationView{
-                Discover()
+        
+        VStack{
+            TabView(selection: .constant(1)) {
+                NavigationView{
+                    Discover()
                     
-                    .navigationBarTitleDisplayMode(.inline)
-                // .navigationBarHidden(true)
-            }
-            .tabItem { Text("Discover")
+                        .navigationBarTitleDisplayMode(.inline)
+                    // .navigationBarHidden(true)
+                }
+                .tabItem { Text("Discover")
+                    
+                    Image(systemName: "doc.text.image.fill") }
+                .tag(1)
                 
-                Image(systemName: "doc.text.image.fill") }
-            .tag(1)
-            
-            //feedbage
-            NavigationView{
-                Profile()
+                //feedbage
+                NavigationView{
+                    Profile()
                     
-                    .navigationBarTitleDisplayMode(.inline)
-                // .navigationBarHidden(true)
+                        .navigationBarTitleDisplayMode(.inline)
+                    // .navigationBarHidden(true)
+                }
+                .tabItem { Text("Profile")
+                    Image(systemName: "person.circle.fill")
+                    
+                }
+                .tag(2)
+                
             }
-            .tabItem { Text("Profile")
-                Image(systemName: "person.circle.fill")
-               
-            }
-            .tag(2)
-            
         }
     }
 }
