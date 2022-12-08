@@ -23,7 +23,7 @@ struct TabeView: View {
             
             //feedbage
             NavigationView{
-                CreateEv()
+                Profile()
                     
                     .navigationBarTitleDisplayMode(.inline)
                 // .navigationBarHidden(true)
