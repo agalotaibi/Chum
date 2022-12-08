@@ -87,7 +87,7 @@ struct Profile: View {
                         Image(systemName: "person.2").resizable()
                             .frame(width: 20 ,height: 15) /// make the background rounded
                         ///
-                        Text("21").font(.system(size: 17)).fontWeight(.regular)
+                        Text("22").font(.system(size: 17)).fontWeight(.regular)
                             
                     }
                 }.padding(.top, 25)
