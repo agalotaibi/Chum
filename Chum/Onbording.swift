@@ -41,7 +41,7 @@ struct Onbording: View {
                     Spacer()
                     
                     Text("Share your")
-                        .font(.system(size: 46)).fontWeight(.bold).frame(maxWidth: 300, alignment: .leading)
+                        .font(.system(size: 46)).frame(maxWidth: 300, alignment: .leading)
                     Text("Status")
                         .font(.system(size: 46))
                         .fontWeight(.bold).frame(maxWidth: 300, alignment: .leading).padding(.bottom)
