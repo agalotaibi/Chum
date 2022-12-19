@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import CloudKit
 
 extension Color {
     init(hex: Int, opacity: Double = 1.0) {
@@ -51,6 +51,8 @@ extension UIColor {
 
 
 struct Profile: View {
+    @State var events :[Event] = []
+    
     
     let backgroundColorHex = "#00B7B3" // shows up as #38424c in iOS >= 13
     let tintColorHex = "#ebdb34"
@@ -61,130 +63,165 @@ struct Profile: View {
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
     }
     
-    @State private var events = 0
+    @State private var events2 = 0
+    
     
     var body: some View {
-        ZStack {
-            
-            VStack (spacing: 15){
-                Image("Lhome").resizable()
-                    .frame(width: 150 ,height: 150).cornerRadius(80) /// make the background rounded
-                    .overlay( /// apply a rounded border
-                        RoundedRectangle(cornerRadius: 80)
-                            .stroke(Color(hex: 0xFF9C34), lineWidth: 8)
-                    )
-                
+               ZStack {
+       
+                    VStack (spacing: 15){
+                       Image("Lhome").resizable()
+                           .frame(width: 150 ,height: 150).cornerRadius(80) /// make the background rounded
+                            .overlay( /// apply a rounded border
+                                RoundedRectangle(cornerRadius: 80)
+                                   .stroke(Color(hex: 0xFF9C34), lineWidth: 8)
+                           )
+        
+                        Text("Hi! this is your space to tell people more about you!")
+                            .fontWeight(.semibold).multilineTextAlignment(.center).padding(/*@START_MENU_TOKEN@*/.horizontal, 55.0/*@END_MENU_TOKEN@*/).padding(.top, 25)
+        
+                       ZStack {
+        
+                          RoundedRectangle(cornerRadius: 25)
+                                .fill(Color(hex: 0xFF9C34))
+                                .frame(width: 66, height: 28)
+                            HStack {
+                                Image(systemName: "person.2").resizable()
+                                    .frame(width: 20 ,height: 15) /// make the background rounded
+       
+                                Text("22").font(.system(size: 17)).fontWeight(.regular)
+        
+                           }
+                       }.padding(.top, 25)
+        
+                        VStack {
+                            Picker("Events?", selection: $events2, content: {
+                                Text("Current Events ").fontWeight(.semibold).tag(0)
+                                Text("History Events").fontWeight(.semibold).tag(1)
+                            })
+                            .pickerStyle(.segmented).frame(width: .infinity ,height: 35)
+                           // Text("Value: \(favoriteColor)")
+        
+                        }.padding(.top)
+                       // Text("Selected color: \(events2)")
+                        
+                        if events2 == 0 {
+                        List{
+                            ForEach(events) { event  in
+                                if event.dateTime >= Date.now {
+                                    Section{
+                                    HStack(spacing: 2){                    Text("\(event.eventEmoji)")
+                                            .font(.system(size: 50)).frame(width: 70, height: .infinity)
+                                        
+                                        
+                                        VStack(alignment: .leading, spacing:6){
+                                            Text("\(event.eventName)")
+                                                .font(.title3)
+                                                .fontWeight(.semibold)
+                                            Text("In \(event.EventLocation)")
+                                            
+                                            Text("at  \(event.dateTime.displayFormat1) ")
+                                            
+                                            
+                                            
+                                        }.padding(6)
+                                            .padding(.leading,20)
+                                    }
+                                    
+                                }}
+                            }.listRowBackground(Color("Prime"))
+                         }
+                        .listStyle(InsetGroupedListStyle())
+                        .onAppear{
+                            fetchEvent()
+                            
+                            
+                        }
+                         }
+                        
+                        if events2 == 1 {
+                        List{
+                            ForEach(events) { event  in
+                                if event.dateTime < Date.now {
+                                    Section{
+                                    HStack(spacing: 2){                    Text("\(event.eventEmoji)")
+                                            .font(.system(size: 50)).frame(width: 70, height: .infinity)
+                                        
+                                        
+                                        VStack(alignment: .leading, spacing:6){
+                                            Text("\(event.eventName)")
+                                                .font(.title3)
+                                                .fontWeight(.semibold)
+                                            Text("In \(event.EventLocation)")
+                                            
+                                            Text("at  \(event.dateTime.displayFormat1) ")
+                                            
+                                            
+                                            
+                                        }.padding(6)
+                                            .padding(.leading,20)
+                                    }
+                                    
+                                }}
+                            }.listRowBackground(Color("Prime"))
+                         }
+                        .listStyle(InsetGroupedListStyle())
+                        .onAppear{
+                            fetchEvent()
+                            
+                            
+                        }
+                         }
+          
+    }
               
-                Text("Hi! this is your space to tell people more about you!")
-                .fontWeight(.semibold).multilineTextAlignment(.center).padding(/*@START_MENU_TOKEN@*/.horizontal, 55.0/*@END_MENU_TOKEN@*/).padding(.top, 25)
-                
-                ZStack {
-                    
-                    RoundedRectangle(cornerRadius: 25)
-                        .fill(Color(hex: 0xFF9C34))
-                        .frame(width: 66, height: 28)
-                    HStack {
-                        Image(systemName: "person.2").resizable()
-                            .frame(width: 20 ,height: 15) /// make the background rounded
-                        ///
-                        Text("22").font(.system(size: 17)).fontWeight(.regular)
-                            
-                    }
-                }.padding(.top, 25)
-                
-                VStack {
-                    Picker("Events?", selection: $events) {
-                        Text("Joint Events (5)").fontWeight(.semibold).tag(0)
-                        Text("Published Events (3)").fontWeight(.semibold).tag(1)
-                    }
-                    .pickerStyle(.segmented).frame(width: .infinity ,height: 35)
-                     // Text("Value: \(favoriteColor)")
-                  
-                }.padding(.top)
-                
-                HStack {
-                    
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 25)
-                            .fill(Color(hex: 0xF4F3F3))
-                            .frame(width: 160, height: 222).opacity(0.90)
-                        VStack {
-                            Image("movie").resizable()
-                                .frame(width: 160 ,height: 187).cornerRadius(25).padding(.top, -18)
-                            
-                            HStack {
-                                
-                                Text("Movie Night").font(.system(size: 10)).fontWeight(.regular)
-                                    .foregroundColor(Color.black).padding(.trailing)
-                                
-                                Image(systemName: "mappin.and.ellipse").resizable()
-                                    .foregroundColor(Color.black)
-                                    .frame(width: 10 ,height: 10)
-                                    
-                                Text("AMC").font(.system(size: 10)).fontWeight(.regular)
-                                    .foregroundColor(Color.black)
-                            }
-                        }
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 11)
-                                .fill(Color(hex: 0xFF9C34))
-                                .frame(width: 40, height: 35)
-                            
-                            Text("5 Dec").font(.system(size: 10)).fontWeight(.regular)
-                        }.padding(.top, 100).padding(.trailing,105)
-                        
-                        
-                    }.padding()
-                    
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 25)
-                            .fill(Color(hex: 0xF4F3F3))
-                            .frame(width: 160, height: 222).opacity(0.90)
-                        VStack {
-                            Image("horse").resizable()
-                                .frame(width: 160 ,height: 187).cornerRadius(25).padding(.top, -18)
-                            
-                            HStack {
-                                
-                                Text("Horse Riding").font(.system(size: 10)).fontWeight(.regular)
-                                    .foregroundColor(Color.black).padding(.trailing)
-                                
-                                Image(systemName: "mappin.and.ellipse").resizable()
-                                    .foregroundColor(Color.black)
-                                    .frame(width: 10 ,height: 10)
-                                    
-                                Text("Derab").font(.system(size: 10)).fontWeight(.regular)
-                                    .foregroundColor(Color.black)
-                            }
-                        }
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 11)
-                                .fill(Color(hex: 0xFF9C34))
-                                .frame(width: 40, height: 35)
-                            
-                            Text("5 Dec").font(.system(size: 10)).fontWeight(.regular)
-                        }.padding(.top, 100).padding(.trailing,105)
-                        
-                        
-                    }
-                }
-                
-                
-                
-                Spacer()
-                
+            }}
+    
+   
+ 
+    
+    
+    func fetchEvent(){
+        
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType:"Event", predicate: predicate)
+        let operation = CKQueryOperation(query: query)
+        operation.recordMatchedBlock = {recordID, result in
+            switch result{
+            case .success(let record):
+                let event = Event(record: record)
+                events.append(event)
+            case .failure(let error):
+                print("Error:\(error.localizedDescription)")
             }
-            
-                     
-                           
-                          
-                    
-                   }
+        }
+        
+        CKContainer.default().publicCloudDatabase.add(operation)
+        
     }
 }
+
 
 struct Profile_Previews: PreviewProvider {
     static var previews: some View {
         Profile()
     }
 }
+
+
+
+extension Date {
+    var displayFormat1: String{
+        self.formatted(
+            .dateTime
+             //   .year(.twoDigits)
+                .month()
+                .day()
+//                .hour()
+//                .minute()
+            
+        )
+    }
+}
+
+
