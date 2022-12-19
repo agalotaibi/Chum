@@ -67,118 +67,124 @@ struct Profile: View {
     
     
     var body: some View {
-               ZStack {
-       
-                    VStack (spacing: 15){
-                       Image("Lhome").resizable()
-                           .frame(width: 150 ,height: 150).cornerRadius(80) /// make the background rounded
-                            .overlay( /// apply a rounded border
-                                RoundedRectangle(cornerRadius: 80)
-                                   .stroke(Color(hex: 0xFF9C34), lineWidth: 8)
-                           )
-        
-                        Text("Hi! this is your space to tell people more about you!")
-                            .fontWeight(.semibold).multilineTextAlignment(.center).padding(/*@START_MENU_TOKEN@*/.horizontal, 55.0/*@END_MENU_TOKEN@*/).padding(.top, 25)
-        
-                       ZStack {
-        
-                          RoundedRectangle(cornerRadius: 25)
-                                .fill(Color(hex: 0xFF9C34))
-                                .frame(width: 66, height: 28)
-                            HStack {
-                                Image(systemName: "person.2").resizable()
-                                    .frame(width: 20 ,height: 15) /// make the background rounded
-       
-                                Text("22").font(.system(size: 17)).fontWeight(.regular)
-        
-                           }
-                       }.padding(.top, 25)
-        
-                        VStack {
-                            Picker("Events?", selection: $events2, content: {
-                                Text("Current Events ").fontWeight(.semibold).tag(0)
-                                Text("History Events").fontWeight(.semibold).tag(1)
-                            })
-                            .pickerStyle(.segmented).frame(width: .infinity ,height: 35)
-                           // Text("Value: \(favoriteColor)")
-        
-                        }.padding(.top)
-                       // Text("Selected color: \(events2)")
+        ZStack {
+            NavigationView{
+                
+                VStack (spacing: 15){
+                    Image("Lhome").resizable()
+                        .frame(width: 150 ,height: 150).cornerRadius(80) /// make the background rounded
+                        .overlay( /// apply a rounded border
+                            RoundedRectangle(cornerRadius: 80)
+                                .stroke(Color(hex: 0xFF9C34), lineWidth: 8)
+                        )
+                    
+                    Text("Hi! this is your space to tell people more about you!")
+                        .fontWeight(.semibold).multilineTextAlignment(.center).padding(/*@START_MENU_TOKEN@*/.horizontal, 55.0/*@END_MENU_TOKEN@*/).padding(.top, 25)
+                    
+                    
+                    ZStack {
+                        NavigationLink{
+                            friendsList()
+                        }
                         
-                        if events2 == 0 {
+                    label:{
+//                        RoundedRectangle(cornerRadius: 25)
+//                            .fill(Color(hex: 0xFF9C34))
+//                            .frame(width: 66, height: 28)
+                        HStack {
+                            Image(systemName: "person.2").resizable()
+                                .frame(width: 20 ,height: 15).foregroundColor(Color.white) /// make the background rounded
+                            
+                            Text("22").font(.system(size: 17)).fontWeight(.regular).foregroundColor(Color.white)
+                            
+                        }.frame(width: 70 ,height: 30).background(Color(hex: 0xFF9C34)).cornerRadius(20)
+                    }}.padding(.top, 25)
+                    
+                    VStack {
+                        Picker("Events?", selection: $events2, content: {
+                            Text("Current Events ").fontWeight(.semibold).tag(0)
+                            Text("History Events").fontWeight(.semibold).tag(1)
+                        })
+                        .pickerStyle(.segmented).frame(width: 350 ,height: 35)
+                        // Text("Value: \(favoriteColor)")
+                        
+                    }.padding(.top)
+                    // Text("Selected color: \(events2)")
+                    
+                    if events2 == 0 {
                         List{
                             ForEach(events) { event  in
                                 if event.dateTime >= Date.now {
                                     Section{
-                                    HStack(spacing: 2){                    Text("\(event.eventEmoji)")
-                                            .font(.system(size: 50)).frame(width: 70, height: .infinity)
+                                        HStack(spacing: 2){                    Text("\(event.eventEmoji)")
+                                                .font(.system(size: 50)).frame(width: 70, height: .infinity)
+                                            
+                                            
+                                            VStack(alignment: .leading, spacing:6){
+                                                Text("\(event.eventName)")
+                                                    .font(.title3)
+                                                    .fontWeight(.semibold)
+                                                Text("In \(event.EventLocation)")
+                                                
+                                                Text("at  \(event.dateTime.displayFormat1) ")
+                                                
+                                                
+                                                
+                                            }.padding(6)
+                                                .padding(.leading,20)
+                                        }
                                         
-                                        
-                                        VStack(alignment: .leading, spacing:6){
-                                            Text("\(event.eventName)")
-                                                .font(.title3)
-                                                .fontWeight(.semibold)
-                                            Text("In \(event.EventLocation)")
-                                            
-                                            Text("at  \(event.dateTime.displayFormat1) ")
-                                            
-                                            
-                                            
-                                        }.padding(6)
-                                            .padding(.leading,20)
-                                    }
-                                    
-                                }}
+                                    }}
                             }.listRowBackground(Color("Prime"))
-                         }
+                        }
                         .listStyle(InsetGroupedListStyle())
                         .onAppear{
                             fetchEvent()
                             
                             
                         }
-                         }
-                        
-                        if events2 == 1 {
+                    }
+                    
+                    if events2 == 1 {
                         List{
                             ForEach(events) { event  in
                                 if event.dateTime < Date.now {
                                     Section{
-                                    HStack(spacing: 2){                    Text("\(event.eventEmoji)")
-                                            .font(.system(size: 50)).frame(width: 70, height: .infinity)
+                                        HStack(spacing: 2){                    Text("\(event.eventEmoji)")
+                                                .font(.system(size: 50)).frame(width: 70, height: .infinity)
+                                            
+                                            
+                                            VStack(alignment: .leading, spacing:6){
+                                                Text("\(event.eventName)")
+                                                    .font(.title3)
+                                                    .fontWeight(.semibold)
+                                                Text("In \(event.EventLocation)")
+                                                
+                                                Text("at  \(event.dateTime.displayFormat1) ")
+                                                
+                                                
+                                                
+                                            }.padding(6)
+                                                .padding(.leading,20)
+                                        }
                                         
-                                        
-                                        VStack(alignment: .leading, spacing:6){
-                                            Text("\(event.eventName)")
-                                                .font(.title3)
-                                                .fontWeight(.semibold)
-                                            Text("In \(event.EventLocation)")
-                                            
-                                            Text("at  \(event.dateTime.displayFormat1) ")
-                                            
-                                            
-                                            
-                                        }.padding(6)
-                                            .padding(.leading,20)
-                                    }
-                                    
-                                }}
+                                    }}
                             }.listRowBackground(Color("Prime"))
-                         }
+                        }
                         .listStyle(InsetGroupedListStyle())
                         .onAppear{
                             fetchEvent()
                             
                             
                         }
-                         }
-          
-    }
-              
+                    }
+                    
+                }
+                
             }}
-    
-   
- 
+        
+        
+    }
     
     
     func fetchEvent(){

@@ -18,6 +18,7 @@
 		31A271292940CC68002370B2 /* CreateEv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A271282940CC68002370B2 /* CreateEv.swift */; };
 		31A2712B2940D130002370B2 /* Onbording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A2712A2940D130002370B2 /* Onbording.swift */; };
 		31A2712D2940D152002370B2 /* TabeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A2712C2940D152002370B2 /* TabeView.swift */; };
+		31BDE91A2950F6100038DB68 /* friendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BDE9192950F6100038DB68 /* friendsList.swift */; };
 		E9BC4A682942239500CE809E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BC4A672942239500CE809E /* Profile.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		31A271282940CC68002370B2 /* CreateEv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEv.swift; sourceTree = "<group>"; };
 		31A2712A2940D130002370B2 /* Onbording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onbording.swift; sourceTree = "<group>"; };
 		31A2712C2940D152002370B2 /* TabeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabeView.swift; sourceTree = "<group>"; };
+		31BDE9192950F6100038DB68 /* friendsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendsList.swift; sourceTree = "<group>"; };
 		E9BC4A672942239500CE809E /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 				31A270FD2940B38B002370B2 /* ContentView.swift */,
 				E9BC4A672942239500CE809E /* Profile.swift */,
 				31A271262940CC3A002370B2 /* Discover.swift */,
+				31BDE9192950F6100038DB68 /* friendsList.swift */,
 				31A271282940CC68002370B2 /* CreateEv.swift */,
 				31A270FF2940B38C002370B2 /* Assets.xcassets */,
 				31A271012940B38C002370B2 /* Chum.entitlements */,
@@ -277,6 +280,7 @@
 				31A2712D2940D152002370B2 /* TabeView.swift in Sources */,
 				31A271292940CC68002370B2 /* CreateEv.swift in Sources */,
 				31A270FE2940B38B002370B2 /* ContentView.swift in Sources */,
+				31BDE91A2950F6100038DB68 /* friendsList.swift in Sources */,
 				E9BC4A682942239500CE809E /* Profile.swift in Sources */,
 				31A270FC2940B38B002370B2 /* ChumApp.swift in Sources */,
 				31A271272940CC3A002370B2 /* Discover.swift in Sources */,
@@ -435,7 +439,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Chum/Preview Content\"";
-				DEVELOPMENT_TEAM = PV53J35PV4;
+				DEVELOPMENT_TEAM = MB5NQ72WT3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
