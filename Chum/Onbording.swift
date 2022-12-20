@@ -26,7 +26,7 @@ struct Onbording: View {
                         .font(.system(size: 46))
                         .fontWeight(.bold).frame(maxWidth: 300, alignment: .leading).padding(.bottom)
                     
-                    Text("A place to engage with your Friends and do your activity together. ")
+                    Text("A place to engage with your friends and do your activities together ")
                         .font(.system(size: 20))
                         .frame(maxWidth: 300, alignment: .leading)
                     Spacer()
@@ -46,7 +46,7 @@ struct Onbording: View {
                         .font(.system(size: 46))
                         .fontWeight(.bold).frame(maxWidth: 300, alignment: .leading).padding(.bottom)
                     
-                    Text("Share What you plan to do and aske them to join with you. ")
+                    Text("Share What you plan to do and ask them to join ")
                         .font(.system(size: 20))
                         .frame(maxWidth: 300, alignment: .leading)
                     
