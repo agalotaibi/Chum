@@ -78,7 +78,7 @@ struct Profile: View {
                                 .stroke(Color(hex: 0xFF9C34), lineWidth: 8)
                         )
                     
-                    Text("Hi! this is your space to tell people more about you!")
+                    Text("Hi ! this is your space to tell people more about you")
                         .fontWeight(.semibold).multilineTextAlignment(.center).padding(/*@START_MENU_TOKEN@*/.horizontal, 55.0/*@END_MENU_TOKEN@*/).padding(.top, 25)
                     
                     
