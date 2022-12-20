@@ -11,7 +11,7 @@ import SwiftUI
 struct ChumApp: App {
     var body: some Scene {
         WindowGroup {
-            Onbording()
+            TabeView()
         }
     }
 }
