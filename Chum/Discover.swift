@@ -10,9 +10,12 @@ import CloudKit
 
 struct Discover: View {
     @State var events :[Event] = []
+
     var body: some View {
         
+        
         VStack{
+            
             NavigationView{
                 
                 VStack{
@@ -50,6 +53,12 @@ struct Discover: View {
                                         
                                     }
                                     .padding(6)
+                                }.swipeActions{
+                                    Button{
+                                        print("Join Events")
+                                    }label: { Text("Join")
+                                        
+                                    }.tint(Color(hex: 0xFF9C34))
                                 }
                                 
                             }
