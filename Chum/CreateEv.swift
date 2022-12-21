@@ -17,6 +17,7 @@ struct CreateEv: View {
     @State var EventLocation = ""
     @State var eventEmoji = ""
     @State var dateTime = Date.now
+    @Environment(\.dismiss) var dismiss
     
     
     var body: some View {
@@ -28,14 +29,18 @@ struct CreateEv: View {
                             .font(.title)
                             .fontWeight(.bold)
                         Spacer()
-                        Button(action : { self.presentationMode.wrappedValue.dismiss() }){
+                        Button(action : { self.presentationMode.wrappedValue.dismiss()
+                            
+                        }){
                             Text("Publish")
                                 .fontWeight(.bold)
                                 .padding()
                                 .font(.body)
                                 .foregroundColor(Color("Prime"))
-                                .cornerRadius(12).onDisappear()  {
+                                .cornerRadius(12).onTapGesture()  {
                                     addEvent(eventName: eventName, EventLocation: EventLocation, eventEmoji: eventEmoji, noFrinds: Int(noFrinds), dateTime: dateTime)
+                                    
+                                    dismiss()
                                 }
                             
                         }
