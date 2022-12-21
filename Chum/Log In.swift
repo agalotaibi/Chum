@@ -33,6 +33,10 @@ struct Log_In: View {
         NavigationView{
             VStack(spacing:20){
                 VStack{
+                    
+                    Image("chumNL").resizable().aspectRatio(contentMode: .fit)
+                        .frame(width: 250).padding().padding(.bottom)
+                    
                     Text("Welcome Back!")
                         .font(.title)
                     Text("We're so excited to see you again!")
@@ -162,7 +166,7 @@ struct Log_In: View {
                         .cornerRadius(5)
                 }
                
-                NavigationLink(destination: Register() . navigationBarBackButtonHidden(true), isActive:$ch){
+                NavigationLink(destination: TabeView() . navigationBarBackButtonHidden(true), isActive:$ch){
                     
                 Button(action : {
                     Auth()

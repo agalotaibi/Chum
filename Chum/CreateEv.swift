@@ -23,6 +23,26 @@ struct CreateEv: View {
         VStack{
             NavigationView{
                 ScrollView(.vertical,showsIndicators: false){
+                    HStack{
+                        Text("Share Events")
+                            .font(.title)
+                            .fontWeight(.bold)
+                        Spacer()
+                        Button(action : { self.presentationMode.wrappedValue.dismiss() }){
+                            Text("Publish")
+                                .fontWeight(.bold)
+                                .padding()
+                                .font(.body)
+                                .foregroundColor(Color("Prime"))
+                                .cornerRadius(12).onDisappear()  {
+                                    addEvent(eventName: eventName, EventLocation: EventLocation, eventEmoji: eventEmoji, noFrinds: Int(noFrinds), dateTime: dateTime)
+                                }
+                            
+                        }
+                        
+                        
+                        
+                    }.padding().frame(width: 370)
                     VStack{
                         Text("Event Name").frame(maxWidth: 300, alignment: .leading)
                         TextField("", text: $eventName).frame(width: 300, height: 50.0, alignment: .leading)
@@ -54,17 +74,7 @@ struct CreateEv: View {
                             
                             
                             
-                            Button(action : { self.presentationMode.wrappedValue.dismiss() }){
-                                Text("Publish").padding()
-                                    .frame(maxWidth: 180)
-                                    .font(.callout)
-                                    .foregroundColor(.white)
-                                    .background(Color("Prime"))
-                                    .cornerRadius(12).onDisappear()  {
-                                        addEvent(eventName: eventName, EventLocation: EventLocation, eventEmoji: eventEmoji, noFrinds: Int(noFrinds), dateTime: dateTime)
-                                    }
-                                
-                            }
+                            
                         }
                         
                     }

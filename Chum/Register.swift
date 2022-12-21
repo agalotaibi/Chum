@@ -30,6 +30,9 @@ struct Register: View {
         NavigationView{
             VStack {
                 
+                Image("chumNL").resizable().aspectRatio(contentMode: .fit)
+                    .frame(width: 250).padding().padding(.bottom)
+                
                 
                 Text("Create New Account")
                     .font(.title)
