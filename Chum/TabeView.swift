@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TabeView: View {
+    @AppStorage("key") var shouldShow = true
     var body: some View {
         
             VStack{
@@ -53,6 +54,9 @@ struct TabeView: View {
                     
                 }
                 
+            }
+            .fullScreenCover(isPresented: $shouldShow) {
+                Onbording(shouldShow: $shouldShow)
             }
         
     }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Onbording: View {
     @State private var selectedTab = 1
+    @Binding  var shouldShow :Bool
     var body: some View {
         NavigationView{
             
@@ -52,17 +53,16 @@ struct Onbording: View {
                     
                     Spacer()
                     
-                    NavigationLink{
-                        
-                        TabeView().navigationBarBackButtonHidden(true)
-                    }
+                    Button(action: {
+                        shouldShow = false
+                    },
                     
                 label:{Text("Done")
                         .padding()
                         .frame(maxWidth: 180)
                         .font(.callout)
                         .foregroundColor(.white).background(Color("Prime"))
-                    .cornerRadius(12)}
+                    .cornerRadius(12)})
                     
                     Spacer()
                     
@@ -79,11 +79,11 @@ struct Onbording: View {
                   }
               
       }
-  //}
+  
 
 
-struct Onbording_Previews: PreviewProvider {
-    static var previews: some View {
-        Onbording()
-    }
-}
+//struct Onbording_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Onbording()
+//    }
+//}

@@ -188,7 +188,7 @@ struct Profile: View {
     
     
     func fetchEvent(){
-        
+        events.removeAll()
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType:"Event", predicate: predicate)
         let operation = CKQueryOperation(query: query)
